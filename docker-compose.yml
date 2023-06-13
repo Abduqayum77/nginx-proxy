@@ -21,7 +21,9 @@ services:
             - http_challenge:/var/www/.well-known
             - ./scripts:/scripts
             - ./config:/config
-
+            
+        depends_on: 
+            - nginx
         entrypoint: sh -c
         command: certbot renew
 
